@@ -15,7 +15,7 @@ func main() {
 			w.Write([]byte("success"))
 		}),
 	}
-	server.TLSConfig = &tls.Config{MinVersion: }
+	server.TLSConfig = &tls.Config{MinVersion: tls.VersionTLS10}
 	if err := server.ListenAndServeTLS("server.crt", "server.key"); err != nil {
 		log.Fatalf("server crashed :: %s", err.Error())
 	}
